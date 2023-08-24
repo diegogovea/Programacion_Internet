@@ -26,7 +26,7 @@
 </head>
 <body>
     <!--A partir de aquí empieza la explicación de Formularios-->
-    <form name="forumalrio" id="form1" >
+    <form name="forumalrio" id="form1" method="post" action="/recibe.php">
             <input type="text" name="correo" id="correo1" value="@"/><br>
             <input type="text" name="pass" id="pass1" placeholder="Escribe tu contraseña"/><br>
             <select name="rol" id="rol">
@@ -34,6 +34,8 @@
                 <option value="1">Gerente</option>
                 <option value="2">Ejecutivo</option>
             </select>
+            <br>
+            <input type="submit" onclick="alert('ola mundo'); return false; "value="Enviar"/>
     </form>
 </body>
 </html>
