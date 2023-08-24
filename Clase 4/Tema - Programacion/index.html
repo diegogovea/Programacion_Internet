@@ -15,27 +15,31 @@
         function miAlerta(nombre,calificacion){        //Otra forma de hacer una alerta
             alert('OA '+ nombre+' '+apellidos+' tu calificacion es: '+ calificacion);
           
-            console.log('Resultado: ___________');
+            //console.log('Resultado: ___________');
         }
         
-        miAlerta(nombre, calificacion);
-
+        //miAlerta(nombre, calificacion);
+        
+        function validar(){
+            var correo = document.formulario.correo.value;
+            alert(correo);
+        }
         
         
     </script>
 </head>
 <body>
     <!--A partir de aquí empieza la explicación de Formularios-->
-    <form name="forumalrio" id="form1" method="post" action="/recibe.php">
-            <input type="text" name="correo" id="correo1" value="@"/><br>
-            <input type="text" name="pass" id="pass1" placeholder="Escribe tu contraseña"/><br>
+    <form name="formulario" id="form1" method="post" action="/recibe.php">
+            <input type="text" name="correo" id="correo" value="@"/><br>
+            <input type="text" name="pass" id="pass1" placeholder="Escribe tu pass"/><br>
             <select name="rol" id="rol">
                 <option value="0">Selecciona</option>       <!-- GET o POST -->
                 <option value="1">Gerente</option>
                 <option value="2">Ejecutivo</option>
             </select>
             <br>
-            <input type="submit" onclick="alert('ola mundo'); return false; "value="Enviar"/>
+            <input type="submit" onclick="validar(); return false; "value="Enviar"/>
     </form>
 </body>
 </html>
