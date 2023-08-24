@@ -8,13 +8,20 @@
     <script>
         
         //alert('Bienvenido...');   //Una forma de mandar una alerta
+        var nombre          = 'Diego';
+        var apellidos       = "Govea";
+        var calificacion    = 99;
 
-        function miAlerta(){        //Otra forma de hacer una alerta
-            alert('OA');
+        function miAlerta(nombre,calificacion){        //Otra forma de hacer una alerta
+            alert('OA '+ nombre+' '+apellidos+' tu calificacion es: '+ calificacion);
+          
+            console.log('Resultado: ___________');
         }
         
-        miAlerta();
+        miAlerta(nombre, calificacion);
 
+        
+        
     </script>
 </head>
 <body>
