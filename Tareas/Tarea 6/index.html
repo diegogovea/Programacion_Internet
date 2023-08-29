@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Validacion de Campos
+        </title>
+        <script>
+            function verificar()
+            {
+                
+                var user = document.forms["formulario"]["correo"].value;
+                var password=document.forms["formulario"]["pass1"].value;
+                var rol=document.forms["formulario"]["rol"].value;
+                
+                if(correo=="" || pass1=="" || rol=="0")
+                {
+                alert("Faltan campos por llenar...");
+                }
+                else{
+                    alert("Campos llenos.")
+                }
+            }
+        </script>
+    </head>
+
+<body>
+
+<form name="formulario" method="post"  action="recibe.php">
+    <input type = "text" name = "correo" id = "correo"  placeholder = "Escribe tu usuario" /><br>
+    <input type = "text" name = "pass" id = "pass1" placeholder = "Ingrese su contrasena..." /><br>
+    <select name="rol" id="rol">
+        <option value = "0"> Selecciona </option> 
+        <option value = "1"> Gerente </option>
+        <option value = "2"> Ejecutivo </option>
+    </select><br>
+
+    <input type="submit" value="Enviar" onclick="verificar()"/>
+
+</form> 
+
+
+</body>
+</html>
