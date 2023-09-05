@@ -17,6 +17,3 @@ Mira **Deployment** para conocer como desplegar el proyecto.
   <li>Milk</li>
 </ul>
 
-body {
-  background-color: lightblue;
-}
