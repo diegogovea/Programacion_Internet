@@ -12,7 +12,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 ### Contenido del repositorio
 
 <ul>
-  <li>>Ap</li>
+  <li>Ap</li>
   <li>Tea</li>
   <li>Milk</li>
 </ul>
