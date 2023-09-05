@@ -16,3 +16,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
   <li>Tea</li>
   <li>Milk</li>
 </ul>
+
+body {
+  background-color: lightblue;
+}
