@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Validacion de Campos
+        </title>
+
+        <script src="jquery-3.3.1.min.js"></script>
+        <script>
+    
+
+            function eliminarAlumnos(){
+                $('.alumno').hide();
+                //$('#mensaje').html('Tu registro fue eliminado...');
+                $('#mensaje').html('<img src= "loader.gif">');
+                setTimeout("$('#mensaje').html('');",5000);
+            }
+
+            function eliminarMaestros(){
+                $('#maestro1').hide();
+                //$('#mensaje').html('Tu registro fue eliminado...');
+                $('#mensaje').html('<img src= "loader.gif">');
+                setTimeout("$('#mensaje').html('');",5000);
+            }
+            </script>
+
+        <style>
+            .alumno{
+                color: #0066cc;
+                line-height: 22px;
+            }
+        
+            #mensaje{
+                color: #F00;
+                font-size: 18px;
+                font-weight: bold;
+                width: 224px;
+                height: 30px;
+                line-height: 30px;
+                background-color: #CCC;
+                text-align: center;
+            }
+
+            .maestro{
+                color: #005alf;
+                line-height: 22px;
+            }
+
+            .reprobado{
+                color: #0066cc;
+                line-height: 22px;
+            }
+
+            .reprobado{
+                background-color: #F00;
+            }
+        
+            table{
+                
+            }
+
+            body {
+                background-color: lightblue;
+            }
+            /*AAAAAAAAAAAAAAAAAAAA*/
+        </style>
+
+        
+       
+    </head>
+
+<body>
+    <div class="alumno">Rubén Maldonado</div>
+    <div class="alumno">Aaron Jimenez</div>
+    <div class="alumno reprobado">Marisela Guzman</div>
+    <div class="maestro" id="maestro1">Patricia Lopez</div>
+    <div class="maestro" id="maestro2">Luis Casillas</div>
+    
+    <input onclick="eliminarMaestros();" type="submit" value="Eliminar"></input> 
+    <div id="mensaje"></div>
+
+</body>
+</html>
