@@ -1,0 +1,109 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora Basica</title>
+    <style>
+        .principal{
+            width: 400px;
+            height: 500px;
+            border: 1px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color:aquamarine; 
+            border: 1px solid #20A577;
+        }
+        
+        input[type="button"]{
+            height:75px;
+            width: 75px;       
+            text-align: center;
+            font-size: large;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        input[type="text"]{
+            width:100%;
+            height:90%;
+            font-size: larger;
+            text-align: right;
+        }
+        tr{
+            width: 100%;
+            height: 17%;
+        }
+        td{
+            text-align: center;
+        }
+        
+        select{
+            width: 100%;
+            height: 50%;
+            text-align: center;
+            font: 20px sans-serif;
+        }
+    </style>
+
+    <script>
+
+        function mostrarEnPantalla(valor){
+            document.getElementById("display").value += valor;
+        }
+
+        function operacion(){
+            operator = document.getElementById("select_id").value;
+            if (operator == 'x'){
+                null;
+            }
+            else{
+                mostrarEnPantalla(operator);
+            }
+            
+        }
+
+        function calcular(){
+            var p = document.getElementById("display").value;
+            var q = eval(p);
+            document.getElementById("display").value=q;
+        }
+
+    </script>
+
+</head>
+<body>
+<table class="principal">
+    <form name="calculator" onsubmit="calcular(); return false;" method="POST">
+    <tr><td colspan="3">
+    <input type="text" id="display" width="250px" height="100px">
+    </td></tr>
+        <tr>
+            <td><input type="button" value="9" onclick="mostrarEnPantalla(9)"/></td>
+            <td><input type="button" value="8" onclick="mostrarEnPantalla(8)"/></td>
+            <td><input type="button" value="7" onclick="mostrarEnPantalla(7)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="6" onclick="mostrarEnPantalla(6)"/></td>
+            <td><input type="button" value="5" onclick="mostrarEnPantalla(5)"/></td>
+            <td><input type="button" value="4" onclick="mostrarEnPantalla(4)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="3" onclick="mostrarEnPantalla(3)"/></td>
+            <td><input type="button" value="2" onclick="mostrarEnPantalla(2)"/></td>
+            <td><input type="button" value="1" onclick="mostrarEnPantalla(1)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="mostrarEnPantalla('.')"/></td>
+            <td><input type="button" value="0" onclick="mostrarEnPantalla(0)"></td>
+            <td><input type="submit" value="=" style="height: 75px; width:75px;"/></td>
+        </tr>
+        <tr><td colspan="3" id="operations">
+        <select onchange="operacion()" id="select_id">
+            <option value="x" selected>Operacion a realizar</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>		
+            <option value="/">/</option>		
+        </select>
+        </td></tr>
+    </form>
+</table>
+</body>
+</html>
