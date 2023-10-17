@@ -16,7 +16,22 @@
             display: none;
         }
     </style>
-    <script></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        function enviarAjax() {
+            var numero = $('#numero').val();
+            if (numero && numero >0) {
+                $('#mensaje').show();
+                $('#mensaje').html('Existe un numero y es un Numero mayor a cero');
+                setTimeout("$('#mensaje').html(''); $('#mensaje').hide();",5000);
+            }else{
+                $('#mensaje').show();
+                $('#mensaje').html('Faltan campos por llenar');
+                setTimeout("$('#mensaje').html(''); $('#mensaje').hide();",5000);
+            }
+        }
+
+    </script>
 </head>
 <body>
     <input type="text" name="numero" id="numero" /><br>
