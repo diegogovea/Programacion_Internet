@@ -21,9 +21,28 @@
         function enviarAjax() {
             var numero = $('#numero').val();
             if (numero && numero >0) {
-                $('#mensaje').show();
-                $('#mensaje').html('Existe un numero y es un Numero mayor a cero');
-                setTimeout("$('#mensaje').html(''); $('#mensaje').hide();",5000);
+                //$('#mensaje').show();
+                //$('#mensaje').html('Existe un numero y es un Numero mayor a cero');
+                //setTimeout("$('#mensaje').html(''); $('#mensaje').hide();",5000);
+                $.ajax({
+                    url:'respuesta.php', 
+                    type: 'post',
+                    dataType: 'text',
+                    data: 'numero='+numero,
+                    success: function(res){
+                        console.log(res);
+                        $('#mensaje').show();
+                        if(res==1){
+                            $('#mensaje').html('Aprobaste');
+                        }else{
+                            $('#mensaje').html('Reprobaste');
+                        }
+                        setTimeout("$('#mensaje').html(''); $('#mensaje').hide();",5000);
+
+                    },error:function(){
+                        alert('Error archivo no encontrado...');
+                    }
+                });
             }else{
                 $('#mensaje').show();
                 $('#mensaje').html('Faltan campos por llenar');
